@@ -34,6 +34,10 @@ version = 'git rev-parse --short HEAD'.execute().text.trim()
 repositories {
     clear()
     maven {
+        name = "maven2"
+        url = "https://repo1.maven.org/maven2"
+    }
+    maven {
         name = "forge"
         url = "http://files.minecraftforge.net/maven"
     }
