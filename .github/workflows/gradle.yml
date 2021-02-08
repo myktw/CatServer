@@ -26,10 +26,10 @@ jobs:
       run: ./gradlew setup
     - name: genPatches
       run: ./gradlew genPatches
-    - name: build
-      run:
-        - "./gradlew build"
-        - "java -jar CatServerSRG/lib/SpecialSource-1.7.4.jar -i build/localCache/Catserver/recompiled.jar -o build/libs/CatServerSRG.jar -m CatServerSRG/mcp-srg.srg"
+    - name: build jar
+      run: ./gradlew build
+    - name: build SRG
+      run: java -jar CatServerSRG/lib/SpecialSource-1.7.4.jar -i build/localCache/Catserver/recompiled.jar -o build/libs/CatServerSRG.jar -m CatServerSRG/mcp-srg.srg
       
     - uses: ncipollo/release-action@v1.7.3
       with:
