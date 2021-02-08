@@ -34,6 +34,6 @@ jobs:
     - uses: ncipollo/release-action@v1.7.3
       with:
         allowUpdates: true
-        tag: ${{ github.ref }}
+        tag: ${{ github.commit }}
         artifacts: "build/libs/CatServer*.jar"
         token: ${{ secrets.GITHUB_TOKEN }}
